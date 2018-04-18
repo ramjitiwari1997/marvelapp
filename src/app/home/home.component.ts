@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import * as $ from 'jquery'
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -45,14 +45,31 @@ export class HomeComponent implements OnInit {
 
 },
 ]
+isDisable:boolean;
+jq:$;
 
   ngOnInit() {
+  
+  this.jq=$(document);
+  this.jq.ready(function(){
+    
+  })
+  
   }
   openNav():void{
     document.getElementById("mySidenav").style.width = "250px";
+  
+    var div = $("#content");  
+    div.css('pointer-events','none');
+    div.css('opacity', '0.5');
+    div.css( 'background','#CCC');
   }
   closeNav():void{
     document.getElementById("mySidenav").style.width = "0px";
+    var div = $("#content");  
+    div.css('pointer-events','true');
+    div.css('opacity', '1.0');
+    div.css( 'background','white');
   }
   detail(serviceId):void{
     console.log(serviceId)
