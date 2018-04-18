@@ -1,0 +1,21 @@
+  <div class="imgcontainer" >
+    <img src="./../../assets/avatar.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label><br>
+    <span style="color: red" *ngIf="isValid">oops! invalid Username or Password</span>
+    <input type="text" placeholder="Enter Username" name="uname" [(ngModel)]='uname' required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" [(ngModel)]='pwd' required>
+        
+    <button type="submit" (click)='login()'>Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>

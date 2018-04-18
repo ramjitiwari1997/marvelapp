@@ -1,0 +1,64 @@
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+  <div class="imgcontainer" >
+      <img src="./../../assets/avatar.png" alt="Avatar" class="avatar">
+    </div>
+    <div style="text-align: center">
+        <p>Ram Ji</p>
+        <a href="/edit" style="all:initial;text-decoration-line: underline;color:blue">edit profile</a>
+      </div>
+      <div class="menu">
+  <a href="/home">Home</a>
+  <a href="#">Inventory</a>
+  <a href="#">Inventoried</a>
+  <a href="#">About</a>
+  <a href="#">Logout</a>
+</div>
+</div>
+<div class='menuHead'>
+<span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776;</span>
+<span style="text-align: center;font-size: 100%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;Transformer Inventory</span>
+</div>
+<div>
+<table>
+  <div style="margin-top:30%">
+
+  </div>
+  <tr *ngFor="let inventory of inventories">
+    <div>
+      <div class='datarow' (click)='detail(inventory.serviceId)'
+           [style.background-color]='getColor(inventory.priority)'
+      >
+        <td>
+            <div class="calrow">
+              <span style="font-size: 20px;font-family:Verdana, Geneva, Tahoma, sans-serif">
+                  {{inventory.date.day}}
+              </span>
+              <br>
+                   <span>
+                      {{inventory.date.month}}
+                   </span>     
+              </div>
+        </td>
+    <td style="color:white;text-align: center;font-size: 100%">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRIORITY-{{inventory.priority}}</td>
+    </div>
+    <div class="calrow2">
+     <table>
+       <thead style="color:thistle">
+         <td>Service ID</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <td>Distance</td>
+       </thead>
+       <tbody>
+          <td>{{inventory.serviceId}}</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <td>{{inventory.distance}}Kms</td>
+       </tbody>
+     </table>
+    </div>
+   </div>
+   </tr>
+
+</table>
+
+</div>
