@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import * as $ from 'jquery'
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import * as $ from 'jquery'
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
    inventories=[
      {
        serviceId:'123456789546-C',
@@ -74,7 +75,8 @@ jq:$;
     $('.calrow2').css( 'background','white');
   }
   detail(serviceId):void{
-    console.log(serviceId)
+    console.log(serviceId);
+    this.router.navigate(['/details/'+serviceId])
   }
   getColor(priority):string{
     if(priority==='LOW')

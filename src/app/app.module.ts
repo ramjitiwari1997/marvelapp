@@ -33,6 +33,9 @@ import { DetailsComponent } from './details/details.component'
       path:'welcome',component:WelcomeComponent,
     },
     {
+      path:'details/:id',component:DetailsComponent,pathMatch:'full'
+    },
+    {
       path:'**',redirectTo:'welcome' ,pathMatch:'full'
     }
 
