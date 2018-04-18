@@ -60,16 +60,18 @@ jq:$;
     document.getElementById("mySidenav").style.width = "250px";
   
     var div = $("#content");  
-    div.css('pointer-events','none');
+    $('.datarow').css('pointer-events','none');
     div.css('opacity', '0.5');
-    div.css( 'background','#CCC');
+    div.css( 'background',' ##1a1a1a');
+    $('.calrow2').css( 'background',' ##1a1a1a');
   }
   closeNav():void{
     document.getElementById("mySidenav").style.width = "0px";
     var div = $("#content");  
-    div.css('pointer-events','true');
+    $('.datarow').css('pointer-events','');
     div.css('opacity', '1.0');
     div.css( 'background','white');
+    $('.calrow2').css( 'background','white');
   }
   detail(serviceId):void{
     console.log(serviceId)
